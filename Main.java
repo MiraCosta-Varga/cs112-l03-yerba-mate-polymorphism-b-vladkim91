@@ -40,8 +40,21 @@ public class Main {
                     break;
 
                 case 2:
+                    System.out.print("Enter name      : ");
+                    name = keyboard.nextLine();
+                    System.out.print("Enter ounces    : ");
+                    ounces = keyboard.nextInt();
+                    System.out.print("Enter price     $ ");
+                    price = keyboard.nextDouble();
+                    System.out.print("Enter brew temperature (in Celsius): ");
+                    brewTemp = keyboard.nextInt();
 
+                    // Create a Yerba Mate, put into array
+                    inventory[count] = new YerbaMate(name, ounces, price, brewTemp, 0); // Start with 0 passes
+                    System.out.println("Yerba Mate added: " + inventory[count]);
+                    count++;
                     break;
+
             }
 
         } while (choice != 3);
