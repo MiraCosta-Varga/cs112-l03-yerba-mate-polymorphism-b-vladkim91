@@ -15,8 +15,9 @@ public class Main {
             System.out.println("1) Enter new Tea");
             System.out.println("2) Enter new Yerba Mate");
             System.out.println("3) Exit");
-            System.out.print(">>");
+            System.out.print(">> ");
             choice = keyboard.nextInt();
+            keyboard.nextLine();  // Consume newline left from nextInt()
 
             switch (choice) {
                 case 1: // Tea
@@ -24,21 +25,27 @@ public class Main {
                     name = keyboard.nextLine();
                     System.out.print("Enter ounces    : ");
                     ounces = keyboard.nextInt();
+                    keyboard.nextLine();
                     System.out.print("Enter price     $ ");
                     price = keyboard.nextDouble();
+                    keyboard.nextLine();
                     System.out.print("Enter brew temperature (in Celsius): ");
                     brewTemp = keyboard.nextInt();
+                    keyboard.nextLine();
 
-                    // Create a Tea, put into array
                     inventory[count] = new Tea(name, ounces, price, brewTemp);
 
                     System.out.println("Your tea order has been added: " + inventory[count]);
                     count++;
                     break;
 
+                case 2:
+
+                    break;
             }
 
         } while (choice != 3);
+
         // Print inventory
         System.out.println("\nInventory:");
         for (int i = 0; i < count; i++) {
