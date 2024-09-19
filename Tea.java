@@ -16,14 +16,13 @@ public class Tea extends CaffeinatedBeverage {
 
   @Override
   public boolean equals(Object o) {
-      if (!super.equals(o)) return false; 
-      Tea tea = (Tea) o;
-      return this.brewTemp == tea.brewTemp;
+    if (!super.equals(o)) return false; 
+    Tea tea = (Tea) o;
+    return this.brewTemp == tea.brewTemp;
   }
 
   @Override
   public String toString() {
-      return "Tea: " + getName() + ", " + getOunces() + " ounces, brewed @ " +
-            brewTemp + "°C, $" + String.format("%.2f", getPrice());
+    return "Tea: " + getName() + ", " + getOunces() + " ounces, brewed @ " + brewTemp + "°C, $" + String.format("%.2f", getPrice());
   }
 }
